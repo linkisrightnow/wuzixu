@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // 基本数据类型示例
+    int decimal = 42;             // 有符号整数
+    unsigned int udecimal = 4294967295U; // 无符号整数
+    short sh = 32767;            // 短整数
+    long l = 2147483647L;        // 长整数
+    long long ll = 9223372036854775807LL; // 长长整数
+    float f = 3.14159f;          // 单精度浮点数
+    double d = 2.718281828459;  // 双精度浮点数
+    long double ld = 1.1234567890123456789L; // 扩展精度浮点数
+    char ch = 'A';              // 字符
+    char str[] = "Hello, World!"; // 字符串
+    void* ptr = &decimal;       // 指针
+
+    // 整数格式化输出示例
+    printf("===== 整数格式化输出 =====\n");
+    printf("十进制: %d\n", decimal);            // 输出: 42
+    printf("十进制(有符号): %+d\n", decimal);    // 输出: +42
+    printf("十进制(空格填充): % d\n", decimal);   // 输出:  42
+    printf("十进制(无符号): %u\n", udecimal);     // 输出: 4294967295
+    printf("八进制: %o\n", decimal);             // 输出: 52
+    printf("八进制(带前缀): %#o\n", decimal);     // 输出: 052
+    printf("十六进制(小写): %x\n", decimal);      // 输出: 2a
+    printf("十六进制(大写): %X\n", decimal);      // 输出: 2A
+    printf("十六进制(带前缀): %#x\n", decimal);   // 输出: 0x2a
+    printf("十六进制(带前缀大写): %#X\n", decimal); // 输出: 0X2A
+    printf("短整数: %hd\n", sh);                 // 输出: 32767
+    printf("长整数: %ld\n", l);                  // 输出: 2147483647
+    printf("长长整数: %lld\n", ll);               // 输出: 9223372036854775807
+    printf("宽度为10的整数: |%10d|\n", decimal);  // 输出: |        42|
+    printf("左对齐宽度为10的整数: |%-10d|\n", decimal); // 输出: |42        |
+    printf("前导零填充宽度为10的整数: |%010d|\n", decimal); // 输出: |0000000042|
+
+    // 浮点数格式化输出示例
+    printf("\n===== 浮点数格式化输出 =====\n");
+    printf("浮点数: %f\n", f);                  // 输出: 3.141590
+    printf("浮点数(保留2位): %.2f\n", f);        // 输出: 3.14
+    printf("浮点数(宽度10,保留2位): |%10.2f|\n", f); // 输出: |      3.14|
+    printf("浮点数(宽度10,保留2位,左对齐): |%-10.2f|\n", f); // 输出: |3.14      |
+    printf("浮点数(科学计数法): %e\n", f);       // 输出: 3.141590e+00
+    printf("浮点数(科学计数法大写): %E\n", f);   // 输出: 3.141590E+00
+    printf("浮点数(自动选择格式): %g\n", 12345.0); // 输出: 12345
+    printf("浮点数(自动选择格式): %g\n", 0.000012345); // 输出: 1.2345e-05
+    printf("双精度浮点数: %lf\n", d);            // 输出: 2.718282
+    printf("长双精度浮点数: %Lf\n", ld);         // 输出: 1.123457
+
+    // 字符和字符串格式化输出示例
+    printf("\n===== 字符和字符串格式化输出 =====\n");
+    printf("字符: %c\n", ch);                   // 输出: A
+    printf("字符(ASCII码): %d\n", ch);          // 输出: 65
+    printf("字符串: %s\n", str);                // 输出: Hello, World!
+    printf("字符串(前5个字符): %.5s\n", str);    // 输出: Hello
+    printf("字符串(宽度15): |%15s|\n", str);     // 输出: |   Hello, World!|
+    printf("字符串(宽度15,左对齐): |%-15s|\n", str); // 输出: |Hello, World!   |
+
+    // 指针格式化输出示例
+    printf("\n===== 指针格式化输出 =====\n");
+    printf("指针地址: %p\n", ptr);              // 输出: 0x7ffd...（实际地址值）
+
+    // 其他格式化示例
+    printf("\n===== 其他格式化示例 =====\n");
+    printf("百分比符号: %%\n", ptr);            // 输出: %
+    printf("混合格式: %d + %f = %.2f\n", 10, 3.14, 13.14); // 输出: 10 + 3.140000 = 13.14
+
+    return 0;
+}
